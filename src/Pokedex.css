@@ -2,3 +2,23 @@
     background-color: black;
     color: white;
 }
+
+.pokeContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokeCard {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    height: 250px;
+    width: 300px;
+    border: 4px solid orange;
+    border-radius: 15px;
+    text-align: center;
+}
