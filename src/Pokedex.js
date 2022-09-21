@@ -4,8 +4,16 @@ import './Pokedex.css';
 
 export default function Pokedex() {
   const { pokemon } = usePokemon();
+  let { pokemon2 } = pokemon.map((pkm) => 
+  {if (pkm.species_id.length === 1) {
+    pkm.species_id = '00' + pkm.species_id
+  }
+  if (pkm.species_id.length === 2) {
+    pkm.species_id = '0' + pkm.species_id
+  } 
+  return pokemon;);
+  console.log(pokemon2);
 
-  
   return (
     <div className="pokeContainer">
       {pokemon.map((pkmn) => (
