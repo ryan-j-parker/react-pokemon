@@ -12,11 +12,15 @@ export default function Pokedex() {
             <img src={`${pkmn.url_image}`} />
           </div>
           <h1>{pkmn.pokemon}</h1>
-          <h4>{pkmn.type_1}</h4>
-          <h4>{pkmn.type_2}</h4>
+          <div className="type"> Type:
+            <h4>{pkmn.type_1}</h4>
+            <h4>{pkmn.type_2}</h4>
+          </div>
           <div className="stats"> Stats:
             <p>Height {pkmn.height}</p>
             <p>Weight {pkmn.weight}</p>
+            <p>Attack {pkmn.attack}</p>
+            <p>Defense {pkmn.defense}</p>
           </div>
         </div>
       ))}
