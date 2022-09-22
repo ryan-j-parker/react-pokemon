@@ -1,3 +1,35 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export async function getPokemon(selectedType) {
   const params = new URLSearchParams();
   params.set('perPage', 10);

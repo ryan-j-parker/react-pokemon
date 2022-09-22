@@ -1,15 +1,75 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * {
     background-color: black;
     color: white;
+
 }
 
+html {}
+
 .pokeContainer {
+    overflow-x: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .pokeCard {
@@ -25,7 +85,8 @@
 
 .image {
     height: 200px;
-    width: 100%;
+    width: 200px;
+
 }
 
 .loader-wrapper {

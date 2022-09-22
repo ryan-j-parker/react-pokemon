@@ -1,8 +1,77 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from 'react';
-import usePokemon from './hooks/usePokemon.js';
+import usePokemon from '../hooks/usePokemon.js';
 import './Pokedex.css';
 import Select from './Select.js';
-import pokeballLoader from './pokeball-loader.png';
+import pokeballLoader from '../pokeball-loader.png';
 
 export default function Pokedex() {
   const { pokemon, type, setSelection, loading } = usePokemon([]);
