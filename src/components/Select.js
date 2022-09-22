@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Select({ options, changeHandler }) {
   return (
     <select onChange={(e) => changeHandler(e.target.value)}>

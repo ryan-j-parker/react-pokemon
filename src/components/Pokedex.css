@@ -1,96 +1,29 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 * {
     background-color: black;
     color: white;
-
 }
 
-html {}
-
 .pokeContainer {
-    overflow-x: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
 }
 
 .pokeCard {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    height: 250px;
-    width: 300px;
-    border: 4px solid orange;
-    border-radius: 15px;
+    height: 550px;
+    width: 250px;
+    border: 5px solid orange;
+    align-items: center;
     text-align: center;
 }
 
-.image {
-    height: 200px;
-    width: 200px;
-
-}
-
 .loader-wrapper {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,6 +41,18 @@ html {}
 @keyframes spin {
     100% {
         transform: rotate(360deg);
-
     }
+}
+
+.pokeImage {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
 }
