@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
+    align-items: center;
 }
 
 .pokeCard {
@@ -19,6 +20,28 @@
     width: 250px;
     border: 5px solid orange;
     align-items: center;
+    text-align: center;
+}
+
+.loader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    top: calc(100vh / 2 - 100px);
+    left: calc(100vw / 2 - 100px);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .pokeImage {

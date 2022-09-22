@@ -1,11 +1,18 @@
 import React from 'react';
 import usePokemon from '../hooks/usePokemon.js';
 import './Pokedex.css';
-import Select from './Select';
+import Select from './Select.js';
+import pokeballLoader from '../pokeball-loader.png';
 
 export default function Pokedex() {
-  const { pokemon } = usePokemon();
+  const { pokemon, type, setSelection, loading } = usePokemon();
   return (
+    <>
+    {loading ? <div className="loader-wrap"><img className="loading" src={pokeballLoader} /></div> :
+        <div className="main">
+          <div className="selection">
+            <Select options={type} changeHandler={setSelection} />
+          </div>
     <div className="pokeContainer">
       {pokemon.map((pkmn) => (
         <div className="pokeCard" key={pkmn.id}> 
@@ -27,7 +34,5 @@ export default function Pokedex() {
         </div>
       ))}
     </div>
-    
+    </div>
   );
-  
-}
