@@ -1,38 +1,40 @@
 import { useState, useEffect } from 'react';
-import getPokemon from '../pokemon.js';
+import { getPokemon, getTypes } from '../pokemon.js';
 
 export default function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
   const [error, setError] = useState(false);
-  const [type, setType] = useState('');
-
+  const [select, setSelection] = useState('all');
+  const [type, setType] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-
     const loadPokemon = async () => {
+      setLoading(true);
       try {
-        const data = await getPokemon(setType);
+        const data = await getPokemon(select);
         setPokemon(data);
+        setLoading(false);
       } catch (error) {
         setError(error.message);
       }
-
     };
-
     loadPokemon();
-  }, [setType]);
+  }, [select]);
 
   useEffect(() => {
     const loadTypes = async () => {
+        
       try {
         const data = await getTypes();
-        setType(data.map(type => type.type));
+        setType(data.map((type) => ({ value: type.type, label: type.type })));
 
       } catch (error) {
         setError(error.message);
       }
     };
+    loadTypes();
   });
 
-  return { pokemon, error };
+  return { pokemon, loading, error, type, setSelection };
 }
