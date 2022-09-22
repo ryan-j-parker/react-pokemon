@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getPokemon from '../pokemon.js';
+import getPokemon from '../components/pokemon.js';
 
 export default function usePokemon() {
   const [pokemon, setPokemon] = useState([]);

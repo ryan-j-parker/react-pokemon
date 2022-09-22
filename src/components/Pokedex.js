@@ -1,6 +1,7 @@
 import React from 'react';
-import usePokemon from './hooks/usePokemon.js';
+import usePokemon from '../hooks/usePokemon.js';
 import './Pokedex.css';
+import Select from './Select';
 
 export default function Pokedex() {
   const { pokemon } = usePokemon();
