@@ -1,18 +1,10 @@
 import React from 'react';
-import usePokemon from './hooks/usePokemon.js';
-import './Pokedex.css';
-import Select from './Select.js';
+import usePokemon from './pokemon.js';
 
-export default function Pokedex() {
-  const { pokemon, type, setType } = usePokemon([]);
-
-  console.log(pokemon);
-
-
-
+export default function PokemonCard() {
+  const pokemon = usePokemon();
   return (
     <>
-      <Select options={type} changeHandler={setType} />
       <div className="pokeContainer">
         {pokemon.map((pkmn) => (
           <div className="pokeCard" key={pkmn.id} >
@@ -29,12 +21,10 @@ export default function Pokedex() {
             <h1>{pkmn.pokemon}</h1>
             <h4>{pkmn.type_1}</h4>
             <h4>{pkmn.type_2}</h4>
-            <div className="stats">
-              Stats:
+            <div className="stats">Stats:
               <p>{pkmn.attack}</p>
               <p>{pkmn.defense}</p>
-              <p>{pkmn.hp}</p>
-            </div>
+              <p>{pkmn.hp}</p></div>
           </div>
         ))}
       </div>
