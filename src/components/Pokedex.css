@@ -1,26 +1,36 @@
 * {
-    background-color: black;
-    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .pokeContainer {
+    height: calc(100vh / 2 - 26px);
+    color: white;
+    padding-top: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
     align-items: center;
+    /* background-color: rgb(255, 255, 219); */
 }
 
 .pokeCard {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    height: 550px;
+    height: 400px;
     width: 250px;
     border: 5px solid orange;
     align-items: center;
     text-align: center;
+    background-color: black;
+}
+
+h1 {
+    margin: 0;
 }
 
 .loader-wrapper {
@@ -55,4 +65,40 @@
 .stats {
     display: flex;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.selection {
+    color: white;
+}
+
+Select {
+    font-size: 1.2rem;
+    position: fixed;
+    width: 200px;
+    left: calc(100vw / 2 - 100px);
+    margin-top: 10px;
+}
+
+.title {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-pokeball {
+    height: 50px;
+    width: 50px;
+    margin: 0 25px;
 }

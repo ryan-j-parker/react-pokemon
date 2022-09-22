@@ -24,7 +24,7 @@ export default function usePokemon() {
 
   useEffect(() => {
     const loadTypes = async () => {
-        
+
       try {
         const data = await getTypes();
         setType(data.map((type) => ({ value: type.type, label: type.type })));
