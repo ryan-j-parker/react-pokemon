@@ -4,11 +4,17 @@ import './Pokedex.css';
 import Select from './Select.js';
 import pokeballLoader from '../pokeball.png';
 import PokemonCard from './PokemonCard.js';
-
+import { useState } from 'react';
 
 export default function Pokedex() {
   const { pokemon, type, setSelection, loading, error } = usePokemon();
-  
+  const [search, setSearch] = useState('');
+
+  const searchPokemon = () => {
+    return pokemon.filter((pkmn) => {
+      return pkmn.pokemon.toLowerCase().match(search);
+    });
+  };
 
   return (
     <>
@@ -20,13 +26,20 @@ export default function Pokedex() {
       </div>
       {loading ? <div className="loader-wrap"><img className="loading" src={pokeballLoader} /></div> :
         <div className="main">
+          <div className="search">
+
+          </div>
           <div className="selection">
-            <img className="select-pokeball" src={pokeballLoader} />
+            {/* <img className="select-pokeball" src={pokeballLoader} /> */}
             <Select options={type} changeHandler={setSelection} />
-            <img className="select-pokeball-r" src={pokeballLoader} />
+            {/* <img className="select-pokeball-r" src={pokeballLoader} /> */}
+            <label htmlFor="search">Search by name</label>
+            <input className="sort" name="search" placeholder="enter name" value={search} onChange={(e) => {
+              setSearch(e.target.value);
+            }}></input>
           </div>
           <div className="pokeContainer">
-            {pokemon.map((pkmn) => (                
+            {searchPokemon().map((pkmn) => (
               <PokemonCard key={pkmn.id} pokemon={pkmn.pokemon} url_image={pkmn.url_image} type_1={pkmn.type_1} type_2={pkmn.type_2} height={pkmn.height} weight={pkmn.weight} attack={pkmn.attack} defense={pkmn.defense} />
             ))}
           </div>

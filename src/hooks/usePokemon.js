@@ -34,7 +34,7 @@ export default function usePokemon() {
       }
     };
     loadTypes();
-  });
+  }, []);
 
   return { pokemon, loading, error, type, setSelection };
 }
