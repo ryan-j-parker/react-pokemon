@@ -1,92 +1,28 @@
+export default function PokemonCard({ id, url_image, pokemon, type_1, type_2, height, weight, attack, defense }) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React from 'react';
-import usePokemon from './pokemon.js';
-
-export default function PokemonCard() {
-  const pokemon = usePokemon();
   return (
     <>
       <div className="pokeContainer">
-        {pokemon.map((pkmn) => (
-          <div className="pokeCard" key={pkmn.id} >
 
-            <div className="image">
-              {pkmn.species_id.length === 3}
-              <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${pkmn.species_id}.png`} />
-              {pkmn.species_id.length === 2}
-              <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/0${pkmn.species_id}.png`} />
-              {pkmn.species_id.length === 1}
-              <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/00${pkmn.species_id}.png`} />
-            </div>
+        <div className="pokeCard" key={id} >
 
-            <h1>{pkmn.pokemon}</h1>
-            <h4>{pkmn.type_1}</h4>
-            <h4>{pkmn.type_2}</h4>
-            <div className="stats">Stats:
-              <p>{pkmn.attack}</p>
-              <p>{pkmn.defense}</p>
-              <p>{pkmn.hp}</p></div>
+          <div>
+            <img src={url_image} className="pokeImage" />
           </div>
-        ))}
+
+          <h1>{pokemon}</h1>
+          <h4>Type:</h4>
+          <div className="type">
+            <p> {type_1}, {type_2}</p>
+          </div>
+          <h4>Stats:</h4>
+          <div className="stats">
+            <p>Height: {height}</p>
+            <p>Weight: {weight}</p>
+            <p>Attack: {attack}</p>
+            <p>Defense: {defense}</p>
+          </div>
+        </div>
       </div>
     </>
   );
