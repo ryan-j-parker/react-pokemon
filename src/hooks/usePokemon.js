@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { getPokemon, getTypes } from '../components/pokemon.js';
+import { getPokemon, getTypes } from '../services/pokemon.js';
 
 export default function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
   const [error, setError] = useState(false);
   const [select, setSelection] = useState('all');
   const [type, setType] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState('');
 
   useEffect(() => {
     const loadPokemon = async () => {
