@@ -7,11 +7,11 @@
 .pokeContainer {
     height: calc(100vh / 2 - 26px);
     color: white;
-    padding-top: 25px;
+    margin: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 10px;
+    padding-bottom: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -26,6 +26,7 @@
     align-items: center;
     text-align: center;
     background-color: black;
+    box-shadow: 3px 4px 17px 6px;
 }
 
 h1 {
@@ -44,12 +45,18 @@ h1 {
     position: fixed;
     top: calc(100vh / 2 - 100px);
     left: calc(100vw / 2 - 100px);
-    animation: spin 1s linear infinite;
+    animation: spin .75s linear infinite;
 }
 
 @keyframes spin {
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-cc {
+    100% {
+        transform: rotate(-360deg);
     }
 }
 
@@ -76,16 +83,18 @@ Select {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 25px;
+    /* margin-top: 25px; */
 }
 
 .title {
     text-align: center;
-    padding-top: 5px;
     font-size: 2.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 5px 14px -8px;
+    padding: 5px;
+    border-radius: 15px;
 }
 
 .title-div {
@@ -93,10 +102,25 @@ Select {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .title-pokeball {
-    height: 50px;
-    width: 50px;
-    margin: 0 25px;
+    height: 75px;
+    width: 75px;
+    margin: 10px 15px;
+}
+
+.select-pokeball {
+    height: 35px;
+    width: 35px;
+    margin: 0 10px;
+    animation: spin 5s linear infinite;
+}
+
+.select-pokeball-r {
+    height: 35px;
+    width: 35px;
+    margin: 0 10px;
+    animation: spin-cc 5s linear infinite;
 }

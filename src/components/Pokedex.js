@@ -6,6 +6,7 @@ import pokeballLoader from '../pokeball.png';
 
 export default function Pokedex() {
   const { pokemon, type, setSelection, loading, error } = usePokemon();
+  
 
   return (
     <>
@@ -18,7 +19,9 @@ export default function Pokedex() {
       {loading ? <div className="loader-wrap"><img className="loading" src={pokeballLoader} /></div> :
         <div className="main">
           <div className="selection">
+            <img className="select-pokeball" src={pokeballLoader} />
             <Select options={type} changeHandler={setSelection} />
+            <img className="select-pokeball-r" src={pokeballLoader} />
           </div>
           <div className="pokeContainer">
             {pokemon.map((pkmn) => (
