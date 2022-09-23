@@ -7,14 +7,13 @@
 .pokeContainer {
     height: calc(100vh / 2 - 26px);
     color: white;
-    padding-top: 40px;
+    padding-top: 25px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(255, 255, 219); */
 }
 
 .pokeCard {
@@ -69,16 +68,15 @@ h1 {
     flex-direction: column;
 }
 
-.selection {
-    color: white;
+Select {
+    font-size: 1.5rem;
 }
 
-Select {
-    font-size: 1.2rem;
-    position: fixed;
-    width: 200px;
-    left: calc(100vw / 2 - 100px);
-    margin-top: 10px;
+.selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
 }
 
 .title {
