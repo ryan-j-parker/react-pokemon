@@ -26,17 +26,16 @@ export default function Pokedex() {
       </div>
       {loading ? <div className="loader-wrap"><img className="loading" src={pokeballLoader} /></div> :
         <div className="main">
-          <div className="search">
-
-          </div>
           <div className="selection">
-            {/* <img className="select-pokeball" src={pokeballLoader} /> */}
-            <Select options={type} changeHandler={setSelection} />
-            {/* <img className="select-pokeball-r" src={pokeballLoader} /> */}
-            <label htmlFor="search">Search by name</label>
-            <input className="sort" name="search" placeholder="enter name" value={search} onChange={(e) => {
-              setSearch(e.target.value);
-            }}></input>
+            <div className="sort-bar">
+              <Select options={type} changeHandler={setSelection} />
+            </div>
+            <div className="search-bar">
+              <label htmlFor="search">Search by name</label>
+              <input className="sort" name="search" placeholder="enter name" value={search} onChange={(e) => {
+                setSearch(e.target.value);
+              }}></input>
+            </div>
           </div>
           <div className="pokeContainer">
             {searchPokemon().map((pkmn) => (

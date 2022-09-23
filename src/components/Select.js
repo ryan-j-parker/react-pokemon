@@ -1,7 +1,7 @@
 export default function Select({ options, changeHandler }) {
   return (
     <>
-      <label htmlFor="select">sort by type</label>
+      <label htmlFor="select">Sort by type</label>
       <select className="sort" name="select" onChange={(e) => changeHandler(e.target.value)}>
         <option value="all">all pokemon</option>
         {options.map((opt) => (
